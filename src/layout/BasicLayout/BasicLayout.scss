@@ -6,10 +6,10 @@
     }
 
     &__content {
+        border-right: 1px solid $border-grey;
         height: 100vh;
         overflow-y: scroll;
         padding: 0 !important;
-        border-right: 1px solid $border-grey;
         &::-webkit-scrollbar {
             display: none;
         }

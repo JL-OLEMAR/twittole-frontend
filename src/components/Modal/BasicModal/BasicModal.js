@@ -4,7 +4,7 @@ import { Modal } from 'react-bootstrap'
 import './BasicModal.scss'
 import LogoWhite from '../../../assets/png/logo-white.png'
 
-const BasicModal = ({ show, setShow, children }) => {
+export default function BasicModal ({ show, setShow, children }) {
   return (
     <Modal
       className="basic-modal"
@@ -24,5 +24,3 @@ const BasicModal = ({ show, setShow, children }) => {
     </Modal>
   )
 }
-
-export default BasicModal

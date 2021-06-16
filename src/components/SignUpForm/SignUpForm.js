@@ -7,7 +7,7 @@ import { isEmailValid } from '../../utils/validations'
 import { signUpApi } from '../../api/auth'
 import './SignUpForm.scss'
 
-const SignUpForm = ({ setShowModal }) => {
+export default function SignUpForm ({ setShowModal }) {
   const [formData, setFormData] = useState(initialFormValue())
   const [signUpLoading, setSignUpLoading] = useState(false)
 
@@ -117,8 +117,6 @@ const SignUpForm = ({ setShowModal }) => {
     </div>
   )
 }
-
-export default SignUpForm
 
 const initialFormValue = () => {
   return {

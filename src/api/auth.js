@@ -1,7 +1,7 @@
 import { API_HOST, TOKEN } from '../utils/constants'
 import jwtDecode from 'jwt-decode'
 
-export const signUpApi = (user) => {
+export function signUpApi (user) {
   const url = `${API_HOST}/registro`
   const userTemp = {
     ...user,
@@ -9,7 +9,6 @@ export const signUpApi = (user) => {
     fechaNacimiento: new Date()
   }
   delete userTemp.repeatPassword
-  console.log(userTemp)
 
   const params = {
     method: 'POST',
@@ -34,7 +33,7 @@ export const signUpApi = (user) => {
     })
 }
 
-export const signInApi = (user) => {
+export function signInApi (user) {
   const url = `${API_HOST}/login`
 
   const data = {
@@ -65,19 +64,19 @@ export const signInApi = (user) => {
     })
 }
 
-export const setTokenApi = (token) => {
+export function setTokenApi (token) {
   localStorage.setItem(TOKEN, token)
 }
 
-export const getTokenApi = () => {
+export function getTokenApi () {
   return localStorage.getItem(TOKEN)
 }
 
-export const logoutApi = () => {
+export function logoutApi () {
   localStorage.removeItem(TOKEN)
 }
 
-export const isUserLogedApi = () => {
+export function isUserLogedApi () {
   const token = getTokenApi()
 
   if (!token) {
@@ -90,7 +89,7 @@ export const isUserLogedApi = () => {
   return jwtDecode(token)
 }
 
-const isExpired = (token) => {
+function isExpired (token) {
   const { exp } = jwtDecode(token)
   const expire = exp * 1000
   const timeout = expire - Date.now()

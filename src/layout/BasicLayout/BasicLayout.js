@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import LeftMenu from '../../components/LeftMenu'
 import './BasicLayout.scss'
 
-const BasicLayout = ({ className, setRefreshCheckLogin, children }) => {
+export default function BasicLayout ({ className, setRefreshCheckLogin, children }) {
   return (
     <Container className={`basic-layout ${className}`}>
       <Row>
@@ -18,5 +18,3 @@ const BasicLayout = ({ className, setRefreshCheckLogin, children }) => {
     </Container>
   )
 }
-
-export default BasicLayout

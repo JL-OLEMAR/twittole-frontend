@@ -7,7 +7,7 @@ import { signInApi, setTokenApi } from '../../api/auth'
 import { isEmailValid } from '../../utils/validations'
 import './SignInForm.scss'
 
-const SignInForm = ({ setRefreshCheckLogin }) => {
+export default function SignInForm ({ setRefreshCheckLogin }) {
   const [formData, setFormData] = useState(initialFormValue())
   const [signInLoading, setSignInLoading] = useState(false)
 
@@ -79,8 +79,6 @@ const SignInForm = ({ setRefreshCheckLogin }) => {
     </div>
   )
 }
-
-export default SignInForm
 
 const initialFormValue = () => {
   return {

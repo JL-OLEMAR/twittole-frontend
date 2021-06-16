@@ -10,7 +10,7 @@ import Logo from '../../assets/png/logo.png'
 import LogoWhite from '../../assets/png/logo-white.png'
 import './SignInSignUp.scss'
 
-const SignInSignUp = ({ setRefreshCheckLogin }) => {
+export default function SignInSignUp ({ setRefreshCheckLogin }) {
   const [showModal, setShowModal] = useState(false)
   const [contentModal, setContentModal] = useState(null)
 
@@ -41,9 +41,7 @@ const SignInSignUp = ({ setRefreshCheckLogin }) => {
   )
 }
 
-export default SignInSignUp
-
-const LeftComponent = () => {
+function LeftComponent () {
   return (
     <Col className="signin-signup__left" xs={6}>
       <img src={Logo} alt="Twittole" />
@@ -65,7 +63,7 @@ const LeftComponent = () => {
   )
 }
 
-const RightComponent = ({ openModal, setShowModal, setRefreshCheckLogin }) => {
+function RightComponent ({ openModal, setShowModal, setRefreshCheckLogin }) {
   return (
     <Col className="signin-signup__right" xs={6}>
       <div>
@@ -81,7 +79,11 @@ const RightComponent = ({ openModal, setShowModal, setRefreshCheckLogin }) => {
 
         <Button
           variant="outline-primary"
-          onClick={() => openModal(<SignInForm setRefreshCheckLogin={setRefreshCheckLogin} />)}
+          onClick={() =>
+            openModal(
+              <SignInForm setRefreshCheckLogin={setRefreshCheckLogin} />
+            )
+          }
         >
           Iniciar sesion
         </Button>
