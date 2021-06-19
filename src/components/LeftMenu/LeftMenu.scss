@@ -1,22 +1,24 @@
+
 @import "../../scss/index.scss";
 
-.left-menu {
+.left-menu {  
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   min-height: 100vh;
   border-right: 1px solid $border-grey;
-
+  
   .logo {
-    width: 50px;
-    padding: 20px 0 30px 0;
+    width: 45px;
+    padding: 20px 0 0px 0;
   }
 
   a {
-    font-size: 20px;
+    font-size: 18px;
     color: $font-light;
     font-weight: bold;
     margin-bottom: 30px;
+    margin-right: 5px;
 
     &:hover {
       text-decoration: none;
@@ -24,7 +26,9 @@
     }
 
     svg {
-      margin-right: 20px;
+      margin-right: 10px;
+      padding: 0 !important;
+      margin: 0;
       width: 30px !important;
     }
   }
@@ -34,7 +38,86 @@
     border-radius: 50px;
     font-size: 18px;
     padding: 10px;
+    margin-right: -5px;
     margin-top: 30px;
     font-weight: bold;
+
+    svg {
+      display: none;
+    }
+    
+    span {
+      margin-right: 10px !important;
+    }
+  }
+
+}
+@media only screen and (max-width: 768px) {
+  .left-menu {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    margin-right: 100px !important;
+    
+    &:hover {
+      text-decoration: none;
+      color: $primary;
+    }
+
+    .logo {
+      display: flex;
+      flex-basis: auto;
+      flex-direction: column;
+      flex-shrink: 0;
+      width: 40px;
+      margin: 0 !important;
+      position: relative;
+      padding: 25px 0 0 0;
+      align-items: flex-start;
+      z-index: 0;
+    }
+
+    a {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      flex-direction: column;
+      color: $font-light;
+      font-weight: bold;
+      outline-style: none;
+      
+      svg {
+        display: flex;
+        flex-basis: auto;
+        flex-direction: column;
+        flex-shrink: 0;
+        margin: 0;
+        min-height: 0px;
+        min-width: 0px;
+        padding: 0;
+        position: relative;
+        z-index: 0;
+      }
+    }
+
+    span {
+      display: none;
+    }
+
+    button {
+      width: 90%;
+      background-size: cover;
+      border-radius: 50px !important;
+      margin: 10px 0 0 -5px;
+      min-height: 45px;
+      min-width: 45px;
+      text-align: center !important;
+      align-content: center;
+
+      svg {
+        display: flex;
+        font-size: 20px;
+      }
+    }
   }
 }
+
+

@@ -2,16 +2,28 @@
 
 .basic-layout {
     &__menu {
-        padding-right: 0 !important;
+        display: flex;
+        
+        @media only screen and (max-width: 768px) {
+            padding: 0 !important;
+            margin: 0 0 0 -20px !important;
+        }
     }
 
     &__content {
         border-right: 1px solid $border-grey;
         height: 100vh;
         overflow-y: scroll;
-        padding: 0 !important;
+        padding: 0!important;
+        margin: 0 0 0 -20px !important;
+        
         &::-webkit-scrollbar {
             display: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            padding: 0 !important;
+            margin: 0 0 0 0px !important;
         }
     }
 }
