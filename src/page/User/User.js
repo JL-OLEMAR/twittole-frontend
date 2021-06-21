@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react'
+import { Button, Spinner } from 'react-bootstrap'
 import { withRouter } from 'react-router-dom'
 import { toast } from 'react-toastify'
 
 import useAuth from '../../hooks/useAuth'
 import { getUserApi } from '../../api/user'
+import { getUserTweetsApi } from '../../api/tweet'
 import BasicLayout from '../../layout/BasicLayout'
 import BannerAvatar from '../../components/User/BannerAvatar'
 import InfoUser from '../../components/User/InfoUser'
 
+import ListTweets from '../../components/ListTweets'
 import './User.scss'
 
 function User ({ match, setRefreshCheckLogin }) {
   const [user, setUser] = useState(null)
+  const [tweets, setTweets] = useState(null)
+  const [page, setPage] = useState(1)
+  const [loadingTweets, setLoadingTweets] = useState(false)
   const { params } = match
   const loggedUser = useAuth()
 
@@ -26,6 +32,31 @@ function User ({ match, setRefreshCheckLogin }) {
       })
   }, [params])
 
+  useEffect(() => {
+    getUserTweetsApi(params.id, 1)
+      .then(response => {
+        setTweets(response)
+      })
+      .catch(() => {
+        setTweets([])
+      })
+  }, [params])
+
+  const moreData = () => {
+    const pageTemp = page + 1
+    setLoadingTweets(true)
+
+    getUserTweetsApi(params.id, pageTemp).then((response) => {
+      if (!response) {
+        setLoadingTweets(0)
+      } else {
+        setTweets([...tweets, ...response])
+        setPage(pageTemp)
+        setLoadingTweets(false)
+      }
+    })
+  }
+
   return (
     <BasicLayout className="user" setRefreshCheckLogin={setRefreshCheckLogin}>
       <div className="user__title">
@@ -35,7 +66,25 @@ function User ({ match, setRefreshCheckLogin }) {
       </div>
       <BannerAvatar user={user} loggedUser={loggedUser} />
       <InfoUser user={user} />
-      <div className="user__tweets">Lista de Tweets!</div>
+      <div className="user__tweets">
+        <h3>Tweets</h3>
+        {tweets && <ListTweets tweets={tweets} /> }
+        <Button onClick={moreData}>
+          {!loadingTweets
+            ? (
+              loadingTweets !== 0 && 'Obtener más Tweets'
+            )
+            : (
+              <Spinner
+                as="span"
+                animation="grow"
+                size="sm"
+                role="status"
+                arian-hidden="true"
+              />
+            )}
+        </Button>
+      </div>
     </BasicLayout>
   )
 }
