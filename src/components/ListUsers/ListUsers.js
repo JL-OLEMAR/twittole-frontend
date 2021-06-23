@@ -6,7 +6,7 @@ import './ListUsers.scss'
 
 export default function ListUsers ({ users }) {
   if (isEmpty(users)) {
-    return <h2>No hay resultados</h2>
+    return <h2 className="noData">No hay resultados</h2>
   }
 
   return (

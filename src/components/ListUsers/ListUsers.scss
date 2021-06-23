@@ -1,5 +1,13 @@
 @import "../../scss/index.scss";
 
+.noData {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: 10px 0;
+  border: 0;
+}
+
 .list-users {
   padding: 0;
 

@@ -30,8 +30,10 @@ function Users ({ setRefreshCheckLogin, location, history }) {
         if (params.page == 1) {
           if (isEmpty(response)) {
             setUsers([])
+            setBtnLoading(0)
           } else {
             setUsers(response)
+            setBtnLoading(false)
           }
         } else {
           if (!response) {
