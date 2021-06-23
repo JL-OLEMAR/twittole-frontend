@@ -9,18 +9,21 @@
 
   img {
     &:first-of-type {
-      width: 150px;
-      margin-bottom: 30px;
+      width: 100px;
+      margin-bottom: 10px;
     }
     &:last-of-type {
-      width: 600px;
+      width: 500px;
+      padding-bottom: 0;
     }
   }
 
   a {
-    margin-top: 30px;
     color: $font-light;
     font-size: 30px;
     font-weight: bold;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none !important;
   }
 }
