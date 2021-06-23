@@ -17,7 +17,7 @@ export default function BannerAvatar ({ user, loggedUser }) {
     ? `${API_HOST}/obtenerBanner?id=${user.id}`
     : null
 
-  const avatarUrl = user?.banner
+  const avatarUrl = user?.avatar
     ? `${API_HOST}/obtenerAvatar?id=${user.id}`
     : AvatarNotFound
 

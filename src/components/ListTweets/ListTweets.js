@@ -36,7 +36,11 @@ function Tweet ({ tweet }) {
 
   return (
     <div className="tweet">
-      <Image className="avatar" src={avatarUrl} roundedCircle />
+      <Image
+        className="avatar"
+        loading="lazy"
+        src={avatarUrl} roundedCircle
+      />
       <div>
         <div className="name">
           {userInfo?.nombre} {userInfo?.apellidos}
