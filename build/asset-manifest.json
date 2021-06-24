@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/twittole-frontend/static/css/main.1fdd0f14.chunk.css",
+    "main.js": "/twittole-frontend/static/js/main.30d979c2.chunk.js",
+    "main.js.map": "/twittole-frontend/static/js/main.30d979c2.chunk.js.map",
+    "runtime-main.js": "/twittole-frontend/static/js/runtime-main.ede22b61.js",
+    "runtime-main.js.map": "/twittole-frontend/static/js/runtime-main.ede22b61.js.map",
+    "static/css/2.70ae005d.chunk.css": "/twittole-frontend/static/css/2.70ae005d.chunk.css",
+    "static/js/2.836c92a0.chunk.js": "/twittole-frontend/static/js/2.836c92a0.chunk.js",
+    "static/js/2.836c92a0.chunk.js.map": "/twittole-frontend/static/js/2.836c92a0.chunk.js.map",
+    "index.html": "/twittole-frontend/index.html",
+    "static/css/2.70ae005d.chunk.css.map": "/twittole-frontend/static/css/2.70ae005d.chunk.css.map",
+    "static/css/main.1fdd0f14.chunk.css.map": "/twittole-frontend/static/css/main.1fdd0f14.chunk.css.map",
+    "static/js/2.836c92a0.chunk.js.LICENSE.txt": "/twittole-frontend/static/js/2.836c92a0.chunk.js.LICENSE.txt",
+    "static/media/camara.d25775ca.svg": "/twittole-frontend/static/media/camara.d25775ca.svg",
+    "static/media/close.da5c4222.svg": "/twittole-frontend/static/media/close.da5c4222.svg",
+    "static/media/date-birth.a0465456.svg": "/twittole-frontend/static/media/date-birth.a0465456.svg",
+    "static/media/error-404.fe6e5b62.png": "/twittole-frontend/static/media/error-404.fe6e5b62.png",
+    "static/media/link.93889986.svg": "/twittole-frontend/static/media/link.93889986.svg",
+    "static/media/location.6b82d71c.svg": "/twittole-frontend/static/media/location.6b82d71c.svg",
+    "static/media/logo-white.13c88c37.png": "/twittole-frontend/static/media/logo-white.13c88c37.png",
+    "static/media/logo.0d659bb2.png": "/twittole-frontend/static/media/logo.0d659bb2.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ede22b61.js",
+    "static/css/2.70ae005d.chunk.css",
+    "static/js/2.836c92a0.chunk.js",
+    "static/css/main.1fdd0f14.chunk.css",
+    "static/js/main.30d979c2.chunk.js"
+  ]
+}
